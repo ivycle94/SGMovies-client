@@ -8,7 +8,8 @@ import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAl
 import Header from './components/shared/Header'
 
 import Home from './components/Home'
-import Movies from "./components/sgMovies/IndexMovies"
+import IndexMovies from "./components/sgMovies/IndexMovies"
+import ShowMovie from './components/sgMovies/ShowMovie'
 
 const App = () => {
 
@@ -42,7 +43,8 @@ const App = () => {
 			<Header user={user} />
 			<Routes>
 				<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
-				<Route path='/movies' element={<Movies msgAlert={msgAlert} user={user} />} />
+				<Route path='/movies' element={<IndexMovies msgAlert={msgAlert} user={user} />} />
+				<Route path='/movies/:id' element={<ShowMovie msgAlert={msgAlert} user={user} />} />
 				
 			</Routes>
 			{msgAlerts.map((msgAlert) => (

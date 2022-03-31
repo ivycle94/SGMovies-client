@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react"
+import { Link } from "react-router-dom"
 import {getAllMovies} from "../../api/sgMovies"
 
 const IndexMovies = (prop) => {
@@ -16,7 +17,7 @@ const IndexMovies = (prop) => {
     if (!movies) {
         return <p>Loading...</p>
     } else if (movies.length === 0) {
-        return <p>No pets yet, go add some</p>
+        return <p>No movies yet, go add some</p>
     }
 
     let moviesJsx
@@ -24,8 +25,9 @@ const IndexMovies = (prop) => {
     if (movies.length > 0 ) {
         moviesJsx = movies.map(movie => (
             <li key={movie._id}>
-                {movie.name}
+                <Link to={`/movies/${movie._id}`}>{movie.name}</Link>
             </li>
+            
         ))
     }
 
@@ -38,6 +40,5 @@ const IndexMovies = (prop) => {
         </>
     )
 }
-
 
 export default IndexMovies
