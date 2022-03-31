@@ -10,6 +10,7 @@ import Header from './components/shared/Header'
 import Home from './components/Home'
 import IndexMovies from "./components/sgMovies/IndexMovies"
 import ShowMovie from './components/sgMovies/ShowMovie'
+import CreateMovie from './components/sgMovies/CreateMovie'
 
 const App = () => {
 
@@ -45,6 +46,7 @@ const App = () => {
 				<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
 				<Route path='/movies' element={<IndexMovies msgAlert={msgAlert} user={user} />} />
 				<Route path='/movies/:id' element={<ShowMovie msgAlert={msgAlert} user={user} />} />
+				<Route path='/addMovie' element={<CreateMovie msgAlert={msgAlert} user={user} />} />
 				
 			</Routes>
 			{msgAlerts.map((msgAlert) => (

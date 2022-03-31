@@ -26,6 +26,9 @@ const unauthenticatedOptions = (
         <Nav.Item>
 		    <Link to='/movies' style={linkStyle}>Movies</Link>
         </Nav.Item>
+		<Nav.Item>
+		    <Link to='/addMovie' style={linkStyle}>Add Movie</Link>
+        </Nav.Item>
         <Nav.Item>
 		    <Link to='sign-in' style={linkStyle}>Sign In</Link>
         </Nav.Item>

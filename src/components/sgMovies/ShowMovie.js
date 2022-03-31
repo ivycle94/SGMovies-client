@@ -8,7 +8,7 @@ import { getOneMovie } from "../../api/sgMovies"
 const ShowMovies = (props) => {
     const [movie, setMovie] = useState(null)
     const { id } = useParams()
-    console.log("movie id id:", id) 
+    // console.log("movie id id:", id) 
 
     useEffect(() => {
         getOneMovie(id)
