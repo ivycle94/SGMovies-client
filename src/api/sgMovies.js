@@ -26,3 +26,13 @@ export const createMovie = (movie) => {
         }
     })
 }
+
+
+// delete route
+export const removeMovie = (movieId) => {
+    console.log("this is the movie id in delete func", movieId)
+    return axios({
+        url: `${apiUrl}/movies/${movieId}`,
+        method: 'DELETE'
+    })
+}
