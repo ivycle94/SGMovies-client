@@ -27,6 +27,19 @@ export const createMovie = (movie) => {
     })
 }
 
+// edit -PATCH-> function
+export const updateMovie = (updatedMovie) => {
+    console.log('this is newMovie', updatedMovie)
+    return axios({
+        url: `${apiUrl}/movies/${updatedMovie._id}`,
+        method: 'PATCH',
+        data: { 
+            name: updatedMovie.name,
+            description: updatedMovie.description,
+            year: updatedMovie.year
+        }
+    })
+}
 
 // delete route
 export const removeMovie = (movieId) => {

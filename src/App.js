@@ -14,15 +14,12 @@ import CreateMovie from './components/sgMovies/CreateMovie'
 
 const App = () => {
 
-  const [user, setUser] = useState(null)
+  const [user] = useState(null)
   const [msgAlerts, setMsgAlerts] = useState([])
 
   console.log('user in app', user)
   console.log('message alerts', msgAlerts)
-  const clearUser = () => {
-    console.log('clear user ran')
-    setUser(null)
-  }
+ 
 
 	const deleteAlert = (id) => {
 		setMsgAlerts((prevState) => {
@@ -46,6 +43,7 @@ const App = () => {
 				<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
 				<Route path='/movies' element={<IndexMovies msgAlert={msgAlert} user={user} />} />
 				<Route path='/movies/:id' element={<ShowMovie msgAlert={msgAlert} user={user} />} />
+				<Route path='/addMovie' element={<CreateMovie msgAlert={msgAlert} user={user} />} />
 				<Route path='/addMovie' element={<CreateMovie msgAlert={msgAlert} user={user} />} />
 				
 			</Routes>
